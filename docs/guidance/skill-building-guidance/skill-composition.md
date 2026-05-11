@@ -7,7 +7,7 @@ proven too inconsistent and unreliable to use in practice.
 
 ### Rule: Do not use sub-skill calls
 
-Sub-skill composition — both data-fetch and orchestration patterns — has
+Sub-skill composition (both data-fetch and orchestration patterns) has
 exhibited persistent issues that make it unreliable:
 
 - **Data-fetch sub-skills** using `context: fork` cause the calling skill to
@@ -39,5 +39,5 @@ logic rather than calling the other skill. A small amount of duplication is
 far more reliable than sub-skill composition.
 
 Cross-references:
-- [Skill Decomposition](./skill-decomposition.md) — When to split skills
-- [Writing Effective Instructions](./writing-effective-instructions.md) — Instruction clarity
+- [Skill Decomposition](./skill-decomposition.md). When to split skills.
+- [Writing Effective Instructions](./writing-effective-instructions.md). Instruction clarity.

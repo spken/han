@@ -92,7 +92,11 @@ Add the Test Double skills marketplace to Claude Code, then install the plugin:
 - [Contributing](./CONTRIBUTING.md). Adding or editing skills, agents, and documentation.
 - [Release Notes](./release-notes.md). What's new in each version of the plugin.
 
-## Maintainers
+## Maintainance and Support
+
+- **Maintenance horizon:** Indefinitely maintained, best-effort — no SLA
+- **Project type:** Personal project, with some Test Double support
+- **How to report issues:** GitHub Issues, with expected best effort for response within 2 weeks.
 
 Han is an open source product of [Test Double](https://testdouble.com), and maintained by the following people:
 

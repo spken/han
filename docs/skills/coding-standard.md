@@ -1,6 +1,6 @@
 # /coding-standard
 
-Operator documentation for the `/coding-standard` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/coding-standard/SKILL.md`](../../skills/coding-standard/SKILL.md).
+Operator documentation for the `/coding-standard` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/coding-standard/SKILL.md`](../../plugin/skills/coding-standard/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md) · [YAGNI](../yagni.md)
 
@@ -55,7 +55,7 @@ Example prompts:
 
 A coding-standard document in the project's coding-standards directory, plus integration:
 
-- **`docs/coding-standards/{top-level}[-{second-level}]-{name}.md`** — the standard itself, following the template at [`references/template.md`](../../skills/coding-standard/references/template.md). The hierarchy prefix is discovered from existing standards and the project's languages, frameworks, and subsystems so related standards sort together. Includes metadata (Status, Authors, Applies To, Date Created, Last Updated, Reviewers), an Introduction, the Standard (rules in testable form), Correct-usage examples from real code, What-to-avoid examples, Rationale, and Additional Resources.
+- **`docs/coding-standards/{top-level}[-{second-level}]-{name}.md`** — the standard itself, following the template at [`references/template.md`](../../plugin/skills/coding-standard/references/template.md). The hierarchy prefix is discovered from existing standards and the project's languages, frameworks, and subsystems so related standards sort together. Includes metadata (Status, Authors, Applies To, Date Created, Last Updated, Reviewers), an Introduction, the Standard (rules in testable form), Correct-usage examples from real code, What-to-avoid examples, Rationale, and Additional Resources.
 - **A reference added to `CLAUDE.md`** under the coding-standards section, following the project's existing pattern so every downstream skill finds it.
 - **Cross-references** — links to related standards, ADRs, and feature docs, added bidirectionally.
 - **Source-document handling** (conversion mode) — if the source is fully subsumed, it is deleted and references updated; if it retains useful content, a link to the new standard is added.
@@ -122,5 +122,5 @@ URL: https://sre.google/sre-book/
 - [`/architectural-decision-record`](./architectural-decision-record.md) — For decisions rather than rules. Link the standard to the ADR when the rule embeds a choice.
 - [`/project-documentation`](./project-documentation.md) — For system and feature documentation that is not a rule.
 - [`/code-review`](./code-review.md) — Reads standards during every review; violations become findings.
-- [`codebase-explorer`](../agents/codebase-explorer.md), [`junior-developer`](../agents/junior-developer.md), [`information-architect`](../agents/information-architect.md) — The agents this skill dispatches during evidence gathering and adversarial review.
-- [`SKILL.md` for /coding-standard](../../skills/coding-standard/SKILL.md) — The internal process definition.
+- [`codebase-explorer`](../../plugin/agents/codebase-explorer.md), [`junior-developer`](../agents/junior-developer.md), [`information-architect`](../agents/information-architect.md) — The agents this skill dispatches during evidence gathering and adversarial review.
+- [`SKILL.md` for /coding-standard](../../plugin/skills/coding-standard/SKILL.md) — The internal process definition.

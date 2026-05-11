@@ -1,6 +1,6 @@
 # /update-pr-description
 
-Operator documentation for the `/update-pr-description` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/update-pr-description/SKILL.md`](../../skills/update-pr-description/SKILL.md).
+Operator documentation for the `/update-pr-description` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/update-pr-description/SKILL.md`](../../plugin/skills/update-pr-description/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md)
 
@@ -77,7 +77,7 @@ The skill walks a seven-step process:
 1. **Validate branch state.** Require `origin/HEAD`, require at least one commit, require at least one changed file.
 2. **Analyze changes.** Read the diff, stat, and log. Identify the central mechanism. Classify the change type.
 3. **Determine Test Plan applicability.** If all changed files are documentation, omit the Test Plan. If any are code or config, include it.
-4. **Generate the PR description.** Follow the template at [`references/template.md`](../../skills/update-pr-description/references/template.md); apply file-path truncation from [`references/formatting-rules.md`](../../skills/update-pr-description/references/formatting-rules.md); no nested fenced code blocks; no "Generated with Claude Code" trailer.
+4. **Generate the PR description.** Follow the template at [`references/template.md`](../../plugin/skills/update-pr-description/references/template.md); apply file-path truncation from [`references/formatting-rules.md`](../../plugin/skills/update-pr-description/references/formatting-rules.md); no nested fenced code blocks; no "Generated with Claude Code" trailer.
 5. **Verify.** Section order, file-table caps, valid markdown, branch-specific content only.
 6. **Reviewer context check.** Dispatch a `junior-developer` agent to read the description as a reviewer without full project context; apply edits for undefined acronyms, buried mechanisms, missing per-environment values, and unverifiable Test Plan items.
 7. **Display and update PR.** Show the description; if a PR exists, ask whether to push; on yes, `gh pr edit --body`.
@@ -103,4 +103,4 @@ URL: https://martinfowler.com/articles/feature-toggles.html
 - [`/gh-pr-review`](./gh-pr-review.md) — Post a code review to the same PR.
 - [`/code-review`](./code-review.md) — Local code review without touching GitHub.
 - [`junior-developer`](../agents/junior-developer.md) — Runs the reviewer context check against the drafted description.
-- [`SKILL.md` for /update-pr-description](../../skills/update-pr-description/SKILL.md) — The internal process definition.
+- [`SKILL.md` for /update-pr-description](../../plugin/skills/update-pr-description/SKILL.md) — The internal process definition.

@@ -1,6 +1,6 @@
 # {agent-name}
 
-Operator documentation for the `{agent-name}` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugins/han/agents/{agent-name}.md`](../../agents/{agent-name}.md).
+Operator documentation for the `{agent-name}` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugin/agents/{agent-name}.md`](../../plugin/agents/{agent-name}.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All agents](./README.md) · [All skills](../skills/README.md) · [YAGNI](../yagni.md)
 
@@ -82,4 +82,4 @@ URL: {url}
 - [YAGNI](../yagni.md) — The evidence-based "You Aren't Gonna Need It" rule (when applicable). The two gates, the acceptable-evidence list, the named anti-patterns, and the deferral format.
 - [`{companion-agent}`](./{companion-agent}.md) — {How they pair}
 - [`/{skill-that-dispatches-this}`](../skills/{skill}.md) — {The skill that typically dispatches this agent}
-- [{build-guideline link}](../../../../docs/agent-building-guidelines/{file}.md) — {Relevance}
+- [{build-guideline link}](../guidance/agent-building-guidelines/{file}.md) — {Relevance}

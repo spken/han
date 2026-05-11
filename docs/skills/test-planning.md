@@ -1,6 +1,6 @@
 # /test-planning
 
-Operator documentation for the `/test-planning` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/test-planning/SKILL.md`](../../skills/test-planning/SKILL.md).
+Operator documentation for the `/test-planning` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/test-planning/SKILL.md`](../../plugin/skills/test-planning/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md) · [YAGNI](../yagni.md)
 
@@ -81,7 +81,7 @@ The skill walks a four-step process:
 1. **Determine scope.** Resolve project config; detect git mode (A/B/C) via `detect-test-context.sh`; build a file list.
 2. **Dispatch testing agents.** Launch `test-engineer` and `edge-case-explorer` always; add `concurrency-analyst` when the file list touches async or shared state; add `adversarial-security-analyst` when it touches auth, input handling, isolation, crypto, uploads, or SQL/ORM. All run in parallel in the background; the skill waits for every dispatched agent.
 3. **Merge and prioritize.** Classify findings into the four-tier priority scheme (security items auto-CRIT); assign unified IDs; interleave by priority; cap non-security items at 40.
-4. **Generate output.** Fill the template at [`references/template.md`](../../skills/test-planning/references/template.md) — scope, test plan, deferred, dropped, coverage summary.
+4. **Generate output.** Fill the template at [`references/template.md`](../../plugin/skills/test-planning/references/template.md) — scope, test plan, deferred, dropped, coverage summary.
 
 ## YAGNI
 
@@ -119,7 +119,7 @@ URL: https://www.wiley.com/en-us/Testing+Computer+Software%2C+2nd+Edition-p-9780
 - [`/code-review`](./code-review.md) — Dispatches the same agents plus `adversarial-security-analyst`; use when you want correctness findings too.
 - [`/architectural-analysis`](./architectural-analysis.md) — For structural testability concerns.
 - [`/iterative-plan-review`](./iterative-plan-review.md) — Use to stress-test an already-written test plan.
-- [`test-engineer`](../agents/test-engineer.md), [`edge-case-explorer`](../agents/edge-case-explorer.md) — Always dispatched.
-- [`concurrency-analyst`](../agents/concurrency-analyst.md) — Dispatched when the file list touches async, threads, or shared state.
-- [`adversarial-security-analyst`](../agents/adversarial-security-analyst.md) — Dispatched when the file list touches auth, input handling, isolation, crypto, uploads, or SQL/ORM.
-- [`SKILL.md` for /test-planning](../../skills/test-planning/SKILL.md) — The internal process definition.
+- [`test-engineer`](../../plugin/agents/test-engineer.md), [`edge-case-explorer`](../../plugin/agents/edge-case-explorer.md) — Always dispatched.
+- [`concurrency-analyst`](../../plugin/agents/concurrency-analyst.md) — Dispatched when the file list touches async, threads, or shared state.
+- [`adversarial-security-analyst`](../../plugin/agents/adversarial-security-analyst.md) — Dispatched when the file list touches auth, input handling, isolation, crypto, uploads, or SQL/ORM.
+- [`SKILL.md` for /test-planning](../../plugin/skills/test-planning/SKILL.md) — The internal process definition.

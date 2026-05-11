@@ -20,7 +20,7 @@ A skill is a fixed sequence of steps that Claude Code can execute when you type 
 
 - You invoke it: `/code-review`, `/plan-a-feature`, `/investigate`.
 - It follows a defined protocol. Every reader who runs the same skill gets the same shape of output.
-- It is documented by a `SKILL.md` file inside `plugins/han/skills/{name}/`.
+- It is documented by a `SKILL.md` file inside `plugin/skills/{name}/`.
 - It may dispatch one or more agents for the steps that need judgment.
 
 **Test:** *Could you draw the whole thing as a flowchart?* If yes, it is a skill.
@@ -31,7 +31,7 @@ An agent is a specialist teammate — a model with a persona, a narrow domain, a
 
 - An agent has a name like `adversarial-security-analyst`, `project-manager`, or `junior-developer`.
 - An agent applies contextual judgment: "is this finding really a problem?", "does the plan actually address the risk?", "should we ask another specialist?"
-- An agent is documented by a single `.md` file inside `plugins/han/agents/`.
+- An agent is documented by a single `.md` file inside `plugin/agents/`.
 - You can dispatch an agent directly with the `Agent` tool, but most agents get dispatched *for you* when a skill needs their input.
 
 **Test:** *Does this require reasoning about context rather than following a script?* If yes, it is an agent.
@@ -104,10 +104,10 @@ Skim the indexes after you read this page; pick the one skill you need right now
 - **Want a specific agent?** → [Agents Index](./agents/README.md).
 - **Want to know how dispatch scales?** → [Sizing](./sizing.md).
 - **Want to know what survives a review?** → [YAGNI](./yagni.md).
-- **Writing your own skill or agent?** → [Contributing](./contributing.md).
+- **Writing your own skill or agent?** → [Contributing](../CONTRIBUTING.md).
 
 ## Related reading
 
-- [`docs/plugin-entity-taxonomy.md`](../../../docs/plugin-entity-taxonomy.md) — The taxonomy this plugin follows. Applies across all plugins in this repo.
+- [`docs/plugin-entity-taxonomy.md`](./guidance/plugin-entity-taxonomy.md) — The taxonomy this plugin follows. Applies across all plugins in this repo.
 - [Claude Code Skills reference](https://code.claude.com/docs/en/skills) — How skills are defined and invoked in Claude Code itself.
 - [Claude Code Subagents reference](https://code.claude.com/docs/en/sub-agents) — How agents are dispatched from inside skills.

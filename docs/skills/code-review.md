@@ -1,6 +1,6 @@
 # /code-review
 
-Operator documentation for the `/code-review` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/code-review/SKILL.md`](../../skills/code-review/SKILL.md).
+Operator documentation for the `/code-review` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/code-review/SKILL.md`](../../plugin/skills/code-review/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md) · [YAGNI](../yagni.md)
 
@@ -167,7 +167,7 @@ URL: https://itrevolution.com/product/accelerate/
 - [`/investigate`](./investigate.md) — Next step when a CRIT finding hides a bug whose root cause needs deeper analysis.
 - [`/architectural-analysis`](./architectural-analysis.md) — Run alongside when the change touches module boundaries.
 - [Sizing](../sizing.md) — The cross-skill sizing model. Explains the small / medium / large bands, the default-to-small rule, and the `$size` override.
-- [`junior-developer`](../../agents/junior-developer.md), [`adversarial-security-analyst`](../../agents/adversarial-security-analyst.md) — The two agents this skill always dispatches.
-- [`test-engineer`](../../agents/test-engineer.md), [`edge-case-explorer`](../../agents/edge-case-explorer.md), [`structural-analyst`](../../agents/structural-analyst.md), [`behavioral-analyst`](../../agents/behavioral-analyst.md), [`concurrency-analyst`](../../agents/concurrency-analyst.md) — Conditional dispatches that join the roster when their signal appears in the file list.
-- [`data-engineer`](../../agents/data-engineer.md), [`devops-engineer`](../../agents/devops-engineer.md) — Conditional dispatches for changes touching schemas/migrations/queries (data) or infra/CI/observability (devops).
-- [`SKILL.md` for /code-review](../../skills/code-review/SKILL.md) — The internal process definition.
+- [`junior-developer`](../../plugin/agents/junior-developer.md), [`adversarial-security-analyst`](../../plugin/agents/adversarial-security-analyst.md) — The two agents this skill always dispatches.
+- [`test-engineer`](../../plugin/agents/test-engineer.md), [`edge-case-explorer`](../../plugin/agents/edge-case-explorer.md), [`structural-analyst`](../../plugin/agents/structural-analyst.md), [`behavioral-analyst`](../../plugin/agents/behavioral-analyst.md), [`concurrency-analyst`](../../plugin/agents/concurrency-analyst.md) — Conditional dispatches that join the roster when their signal appears in the file list.
+- [`data-engineer`](../../plugin/agents/data-engineer.md), [`devops-engineer`](../../plugin/agents/devops-engineer.md) — Conditional dispatches for changes touching schemas/migrations/queries (data) or infra/CI/observability (devops).
+- [`SKILL.md` for /code-review](../../plugin/skills/code-review/SKILL.md) — The internal process definition.

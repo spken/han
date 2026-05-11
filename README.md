@@ -11,7 +11,7 @@ Han is a suite of AI skills and agents for solo (or small-team) product engineer
 - **Looking for a specific agent?** → [Agents Index](./docs/agents/README.md) — 21 agents grouped by role.
 - **Wondering how the agent swarms scale?** → [Sizing](./docs/sizing.md) — the small / medium / large dispatch model used by `/code-review`, `/gap-analysis`, `/iterative-plan-review`, `/plan-a-feature`, and `/plan-implementation`.
 - **Wondering why a skill said "YAGNI"?** → [YAGNI](./docs/yagni.md) — the evidence-based rule every planning, review, and architecture skill applies before committing items to an artifact.
-- **Writing or editing a skill or agent?** → [Contributing](./docs/contributing.md).
+- **Writing or editing a skill or agent?** → [Contributing](./CONTRIBUTING.md).
 
 ## What this plugin does
 
@@ -48,6 +48,5 @@ Add the Test Double skills marketplace to Claude Code, then install the plugin:
 - [Agents Index](./docs/agents/README.md) — All 21 agents, grouped by role.
 - [Sizing](./docs/sizing.md) — The small / medium / large model that decides how many agents the swarming skills dispatch.
 - [YAGNI](./docs/yagni.md) — The evidence-based "You Aren't Gonna Need It" rule every planning, review, and architecture skill applies.
-- [Contributing](./docs/contributing.md) — Adding or editing skills, agents, and documentation.
-- [IA Analysis](./docs/ia-analysis.md) — The information architecture findings that shaped this documentation.
+- [Contributing](./CONTRIBUTING.md) — Adding or editing skills, agents, and documentation.
 - [Release Notes](./release-notes.md) — What's new in each version of the plugin.

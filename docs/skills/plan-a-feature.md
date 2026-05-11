@@ -1,6 +1,6 @@
 # /plan-a-feature
 
-Operator documentation for the `/plan-a-feature` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/plan-a-feature/SKILL.md`](../../skills/plan-a-feature/SKILL.md).
+Operator documentation for the `/plan-a-feature` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/plan-a-feature/SKILL.md`](../../plugin/skills/plan-a-feature/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md) · [YAGNI](../yagni.md)
 
@@ -189,4 +189,4 @@ URLs: https://asana.com/resources/raid-log and https://projectmanagementcompass.
 - [`/iterative-plan-review`](./iterative-plan-review.md) — The complement for plans that already exist. Use this when an implementation plan or spec has been drafted and needs multiple review passes to challenge assumptions and refine.
 - [`project-manager`](../agents/project-manager.md) — The agent the skill dispatches for the final synthesis pass that reconciles sub-agent review output into the authoritative specification.
 - [`junior-developer`](../agents/junior-developer.md) — The generalist stress-tester the skill always includes in the sub-agent review round; surfaces hidden assumptions, muddied scope, and uncited claims before the spec hardens.
-- [skill-decomposition.md](../../../../docs/skill-building-guidance/skill-decomposition.md) — Why this skill owns the "build the spec" slice and hands off to sibling skills for implementation planning, iteration, and review instead of doing everything itself.
+- [skill-decomposition.md](../guidance/skill-building-guidance/skill-decomposition.md) — Why this skill owns the "build the spec" slice and hands off to sibling skills for implementation planning, iteration, and review instead of doing everything itself.

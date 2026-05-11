@@ -1,6 +1,6 @@
 # /plan-implementation
 
-Operator documentation for the `/plan-implementation` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/plan-implementation/SKILL.md`](../../skills/plan-implementation/SKILL.md).
+Operator documentation for the `/plan-implementation` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/plan-implementation/SKILL.md`](../../plugin/skills/plan-implementation/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md) · [YAGNI](../yagni.md)
 
@@ -211,5 +211,5 @@ URL: https://ieeexplore.ieee.org/document/1204375
 - [`user-experience-designer`](../agents/user-experience-designer.md) — Typically engaged when the feature has a user-facing surface, UI, or interaction model.
 - [`software-architect`](../agents/software-architect.md) — Engaged when the feature is mostly internal to one codebase or bounded context and the plan benefits from intra-codebase module, class, and interface recommendations.
 - [`system-architect`](../agents/system-architect.md) — Engaged when the feature crosses a service boundary, introduces a new integration, changes a context-map relationship, or shifts data ownership. Both architects are engaged when the feature has both dimensions.
-- [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) — Why this skill uses a team of specialists coordinated by a PM rather than a single large agent trying to cover every domain.
-- [skill-decomposition.md](../../../../docs/skill-building-guidance/skill-decomposition.md) — Why this skill owns the "build the implementation plan" slice and hands off to sibling skills.
+- [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) — Why this skill uses a team of specialists coordinated by a PM rather than a single large agent trying to cover every domain.
+- [skill-decomposition.md](../guidance/skill-building-guidance/skill-decomposition.md) — Why this skill owns the "build the implementation plan" slice and hands off to sibling skills.

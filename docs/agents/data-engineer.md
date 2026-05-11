@@ -1,6 +1,6 @@
 # data-engineer
 
-Operator documentation for the `data-engineer` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugins/han/agents/data-engineer.md`](../../agents/data-engineer.md).
+Operator documentation for the `data-engineer` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugin/agents/data-engineer.md`](../../plugin/agents/data-engineer.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All agents](./README.md) · [All skills](../skills/README.md) · [YAGNI](../yagni.md)
 
@@ -79,7 +79,7 @@ Every finding is traceable to a data-engineering principle (a normal form, a Cod
 - **Re-run after changes.** The agent is cheap to re-dispatch once a migration has been added, an index has been created, or a data contract has landed; Open Questions from the first pass become Answered in the second.
 - **Pair it with the security analyst on regulated changes.** The agent deliberately does not re-derive exploit paths. For a change touching auth, payments, or PHI / PCI data, dispatch `adversarial-security-analyst` alongside and compare the reports.
 - **Pair it with the devops-engineer on migrations that touch production.** The data-engineer enforces expand-and-contract discipline at the schema level; `devops-engineer` enforces progressive-delivery discipline at the rollout level. Run both for migrations with real blast radius.
-- **Pair with a reviewer agent.** The agent generates findings; it does not evaluate its own output. If you want adversarial validation of the review, follow it with `adversarial-validator` or a fresh agent pass. See [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) for why self-evaluation is a bad default.
+- **Pair with a reviewer agent.** The agent generates findings; it does not evaluate its own output. If you want adversarial validation of the review, follow it with `adversarial-validator` or a fresh agent pass. See [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) for why self-evaluation is a bad default.
 
 ## Cost and Latency
 
@@ -215,8 +215,8 @@ URL: https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Che
 - [YAGNI](../yagni.md) — The evidence-based "You Aren't Gonna Need It" rule this agent applies. The two gates, the acceptable-evidence list, the named anti-patterns, and the deferral format.
 - [Agents Index](./README.md) — All 20 agents, grouped by role.
 - [`devops-engineer`](./devops-engineer.md) — Pair on production migrations; this agent covers the schema-level expand-and-contract, `devops-engineer` covers the rollout-level progressive delivery.
-- [`adversarial-security-analyst`](../../agents/adversarial-security-analyst.md) — Pair on regulated data changes; this agent covers data-level governance, the security analyst covers exploit paths.
-- [agent-domain-focus.md](../../../../docs/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns.
-- [agent-model-selection.md](../../../../docs/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier.
-- [graceful-degradation.md](../../../../docs/agent-building-guidelines/graceful-degradation.md) — Why the agent handles missing git and missing migrations inline.
-- [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) — Why a separate reviewer pass is recommended rather than asking this agent to evaluate its own output.
+- [`adversarial-security-analyst`](../../plugin/agents/adversarial-security-analyst.md) — Pair on regulated data changes; this agent covers data-level governance, the security analyst covers exploit paths.
+- [agent-domain-focus.md](../guidance/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns.
+- [agent-model-selection.md](../guidance/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier.
+- [graceful-degradation.md](../guidance/agent-building-guidelines/graceful-degradation.md) — Why the agent handles missing git and missing migrations inline.
+- [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) — Why a separate reviewer pass is recommended rather than asking this agent to evaluate its own output.

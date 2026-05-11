@@ -1,6 +1,6 @@
 # /iterative-plan-review
 
-Operator documentation for the `/iterative-plan-review` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/iterative-plan-review/SKILL.md`](../../skills/iterative-plan-review/SKILL.md).
+Operator documentation for the `/iterative-plan-review` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/iterative-plan-review/SKILL.md`](../../plugin/skills/iterative-plan-review/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md) · [YAGNI](../yagni.md)
 
@@ -198,6 +198,6 @@ URLs: https://asana.com/resources/raid-log and https://projectmanagementcompass.
 - [`junior-developer`](../agents/junior-developer.md) — The generalist stress-tester the skill always includes in team mode.
 - [`software-architect`](../agents/software-architect.md) — Engaged in team mode when the plan contains intra-codebase refactoring, module/class/interface decisions, or SOLID-grounded recommendations. Excluded from the default roster in spec-aware mode.
 - [`system-architect`](../agents/system-architect.md) — Engaged in team mode when the plan crosses a service or bounded-context seam — context-map relationships, integration patterns, data ownership, failure-domain containment. Excluded from the default roster in spec-aware mode.
-- [iteration-checklist.md](../../skills/iterative-plan-review/references/iteration-checklist.md) — The lightweight-mode checklist used from iteration 1 through 5.
-- [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) — Why team mode is reserved for plans with cross-cutting concerns and why the team size is capped.
-- [skill-decomposition.md](../../../../docs/skill-building-guidance/skill-decomposition.md) — Why this skill owns the "iterate on a plan" slice and hands off to sibling skills.
+- [iteration-checklist.md](../../plugin/skills/iterative-plan-review/references/iteration-checklist.md) — The lightweight-mode checklist used from iteration 1 through 5.
+- [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) — Why team mode is reserved for plans with cross-cutting concerns and why the team size is capped.
+- [skill-decomposition.md](../guidance/skill-building-guidance/skill-decomposition.md) — Why this skill owns the "iterate on a plan" slice and hands off to sibling skills.

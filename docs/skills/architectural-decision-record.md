@@ -1,6 +1,6 @@
 # /architectural-decision-record
 
-Operator documentation for the `/architectural-decision-record` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/architectural-decision-record/SKILL.md`](../../skills/architectural-decision-record/SKILL.md).
+Operator documentation for the `/architectural-decision-record` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/architectural-decision-record/SKILL.md`](../../plugin/skills/architectural-decision-record/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md) · [YAGNI](../yagni.md)
 
@@ -57,7 +57,7 @@ Example prompts:
 
 An ADR in the project's ADR directory, plus integration:
 
-- **`docs/adr/{top-level}[-{second-level}]-{title}.md`** — the ADR itself, following the template at [`references/template.md`](../../skills/architectural-decision-record/references/template.md). The hierarchy prefix is discovered from existing ADRs and the project's subsystems, bounded contexts, frameworks, and runtimes so related decisions sort together. Required sections: Context, Decision Drivers, Considered Options, Decision, Consequences, Notes (with a key-files table and cross-references).
+- **`docs/adr/{top-level}[-{second-level}]-{title}.md`** — the ADR itself, following the template at [`references/template.md`](../../plugin/skills/architectural-decision-record/references/template.md). The hierarchy prefix is discovered from existing ADRs and the project's subsystems, bounded contexts, frameworks, and runtimes so related decisions sort together. Required sections: Context, Decision Drivers, Considered Options, Decision, Consequences, Notes (with a key-files table and cross-references).
 - **Status** — `proposed` for new, `accepted` for converted, `deprecated` / `superseded` for updates. Superseding ADRs cross-reference each other.
 - **A reference added to `CLAUDE.md` / `AGENTS.md`** in the section most relevant to the decision.
 - **Cross-references** — links to related ADRs, coding standards, feature docs; bidirectional where it adds value.
@@ -124,8 +124,8 @@ URL: https://www.thoughtworks.com/radar/techniques/lightweight-architecture-deci
 - [`/coding-standard`](./coding-standard.md) — For rules that come out of a decision. Link the standard to the ADR.
 - [`/architectural-analysis`](./architectural-analysis.md) — Often produces decisions worth recording as ADRs.
 - [`/project-documentation`](./project-documentation.md) — For feature docs that reference the ADR.
-- [`codebase-explorer`](../agents/codebase-explorer.md) — Dispatched in create-new mode for context discovery.
+- [`codebase-explorer`](../../plugin/agents/codebase-explorer.md) — Dispatched in create-new mode for context discovery.
 - [`software-architect`](../agents/software-architect.md), [`system-architect`](../agents/system-architect.md) — One of the two reviews the proposed decision; pick by whether the decision is intra-codebase or cross-service.
-- [`risk-analyst`](../agents/risk-analyst.md) — Scores the chosen option and rejected alternatives on likelihood, severity, blast radius, and reversibility.
+- [`risk-analyst`](../../plugin/agents/risk-analyst.md) — Scores the chosen option and rejected alternatives on likelihood, severity, blast radius, and reversibility.
 - [`junior-developer`](../agents/junior-developer.md) — Catches unexplained jargon and unjustified dismissals before the ADR is written.
-- [`SKILL.md` for /architectural-decision-record](../../skills/architectural-decision-record/SKILL.md) — The internal process definition.
+- [`SKILL.md` for /architectural-decision-record](../../plugin/skills/architectural-decision-record/SKILL.md) — The internal process definition.

@@ -1,6 +1,6 @@
 # project-manager
 
-Operator documentation for the `project-manager` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugins/han/agents/project-manager.md`](../../agents/project-manager.md).
+Operator documentation for the `project-manager` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugin/agents/project-manager.md`](../../plugin/agents/project-manager.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All agents](./README.md) · [All skills](../skills/README.md) · [YAGNI](../yagni.md)
 
@@ -114,7 +114,7 @@ In both modes, every claim and decision is traceable to a specific citation (evi
 - **Use facilitation before synthesis.** Synthesis is only as strong as the facilitation inputs. If the discussion has not had round-robin facilitation, the synthesis will have gaps. Run facilitation mode first, then synthesis mode with the facilitation summary as input.
 - **Dispatch the named specialists.** The PM's job is to coordinate, not to replace. When the facilitation summary names specialists to bring in (e.g., "devops-engineer to confirm rollout plan"), actually dispatch those specialists before returning to synthesis.
 - **Honor the "not needed" calls.** When the PM explicitly says a specialist is not needed on a plan, that is also a decision worth honoring — it frees the specialist's attention for work where their domain is touched.
-- **Pair with a reviewer agent.** The PM generates the plan; it does not evaluate its own output. If you want adversarial validation of the synthesized plan, follow it with `adversarial-validator` or a `junior-developer` stress-test. See [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) for why self-evaluation is a bad default.
+- **Pair with a reviewer agent.** The PM generates the plan; it does not evaluate its own output. If you want adversarial validation of the synthesized plan, follow it with `adversarial-validator` or a `junior-developer` stress-test. See [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) for why self-evaluation is a bad default.
 - **Re-run after changes.** As specialists report back, open questions become answered questions, and the synthesis improves. The agent is designed to be re-dispatched once new evidence has landed.
 
 ## Cost and Latency
@@ -186,7 +186,7 @@ URLs: https://www.atlassian.com/work-management/project-management/acceptance-cr
 - [Agents Index](./README.md) — All 20 agents, grouped by role.
 - [`junior-developer`](./junior-developer.md) — The generalist stress-tester the PM leans on for plain-language reframing when specialist input gets entangled.
 - [`/plan-a-feature`](../skills/plan-a-feature.md) and [`/plan-implementation`](../skills/plan-implementation.md) — Skills that dispatch this agent as coordinator and synthesizer.
-- [agent-domain-focus.md](../../../../docs/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise project-management vocabulary (RAID, disagree-and-commit, revisit criterion, servant leader) and named anti-patterns.
-- [agent-model-selection.md](../../../../docs/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier on a synthesis-heavy coordination agent.
-- [graceful-degradation.md](../../../../docs/agent-building-guidelines/graceful-degradation.md) — Why the agent handles missing git, missing standards documents, and missing ADRs inline rather than failing.
-- [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) — Why this agent is a coordinator of specialists, not a specialist replacement.
+- [agent-domain-focus.md](../guidance/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise project-management vocabulary (RAID, disagree-and-commit, revisit criterion, servant leader) and named anti-patterns.
+- [agent-model-selection.md](../guidance/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier on a synthesis-heavy coordination agent.
+- [graceful-degradation.md](../guidance/agent-building-guidelines/graceful-degradation.md) — Why the agent handles missing git, missing standards documents, and missing ADRs inline rather than failing.
+- [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) — Why this agent is a coordinator of specialists, not a specialist replacement.

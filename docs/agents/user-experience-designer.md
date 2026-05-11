@@ -1,6 +1,6 @@
 # user-experience-designer
 
-Operator documentation for the `user-experience-designer` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugins/han/agents/user-experience-designer.md`](../../agents/user-experience-designer.md).
+Operator documentation for the `user-experience-designer` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugin/agents/user-experience-designer.md`](../../plugin/agents/user-experience-designer.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All agents](./README.md) · [All skills](../skills/README.md)
 
@@ -70,7 +70,7 @@ Every finding is traceable to a UX principle, a UI location, and a question in t
 - **Say what ships when.** If a deadline is looming, ask the agent to sequence findings into "must-fix-now" vs. "track-and-improve." It already does this, but a reminder sharpens the judgment.
 - **Treat Open Questions as work.** They are not rhetorical. Each one is something the team must answer — in brief, in analytics, in user research, or in a product decision — to fully trust the severity of the findings that depend on it.
 - **Re-run after changes.** The agent is cheap to re-dispatch once a brief or fix has landed; Open Questions from the first pass become Answered in the second.
-- **Pair with a reviewer agent.** The agent generates findings; it does not evaluate its own output. If you want adversarial validation of the UX report, follow it with `adversarial-validator` or a fresh agent pass. See [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) for why self-evaluation is a bad default.
+- **Pair with a reviewer agent.** The agent generates findings; it does not evaluate its own output. If you want adversarial validation of the UX report, follow it with `adversarial-validator` or a fresh agent pass. See [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) for why self-evaluation is a bad default.
 
 ## Cost and Latency
 
@@ -151,7 +151,7 @@ URL: https://www.nngroup.com/articles/personas-jobs-be-done/
 - [Plugin landing page — han](../../README.md) — The front door. Start here if you arrived from outside the docs tree.
 - [Agents Index](./README.md) — All 20 agents, grouped by role.
 - [`information-architect`](./information-architect.md) — Sibling agent for documentation / content-structure IA. Dispatch in parallel when a surface blends an interactive UI with a content-heavy docs surface.
-- [agent-domain-focus.md](../../../../docs/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns.
-- [agent-model-selection.md](../../../../docs/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier.
-- [graceful-degradation.md](../../../../docs/agent-building-guidelines/graceful-degradation.md) — Why the agent handles missing git and missing accessibility tooling inline.
-- [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) — Why a separate reviewer pass is recommended rather than asking this agent to evaluate its own output.
+- [agent-domain-focus.md](../guidance/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns.
+- [agent-model-selection.md](../guidance/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier.
+- [graceful-degradation.md](../guidance/agent-building-guidelines/graceful-degradation.md) — Why the agent handles missing git and missing accessibility tooling inline.
+- [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) — Why a separate reviewer pass is recommended rather than asking this agent to evaluate its own output.

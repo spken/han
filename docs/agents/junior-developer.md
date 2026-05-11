@@ -1,6 +1,6 @@
 # junior-developer
 
-Operator documentation for the `junior-developer` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugins/han/agents/junior-developer.md`](../../agents/junior-developer.md).
+Operator documentation for the `junior-developer` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugin/agents/junior-developer.md`](../../plugin/agents/junior-developer.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All agents](./README.md) · [All skills](../skills/README.md) · [YAGNI](../yagni.md)
 
@@ -113,7 +113,7 @@ In both modes, every question or finding is traceable to a specific uncertainty 
 - **Treat Open Questions as work.** They are not rhetorical. Each one is something the team must answer — from the author, a stakeholder, a specialist agent, prior art, or a decision — to fully trust the severity of the findings that depend on it. Open Questions are the primary artifact this agent produces.
 - **Use it before specialists, not instead of them.** The agent is a pre-specialist filter: it surfaces the generalist-level questions and names the specialist to consult on each specialist-touching section. Dispatch the named specialists next. Do not ask this agent to do a specialist's job.
 - **Re-run after changes.** The agent is cheap to re-dispatch once the brief has been filled in or the artifact has been revised. Open Questions from the first pass become Answered in the second.
-- **Pair with a reviewer agent.** The agent generates findings; it does not evaluate its own output. If you want adversarial validation of the review itself, follow it with `adversarial-validator` or a fresh agent pass. See [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) for why self-evaluation is a bad default.
+- **Pair with a reviewer agent.** The agent generates findings; it does not evaluate its own output. If you want adversarial validation of the review itself, follow it with `adversarial-validator` or a fresh agent pass. See [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) for why self-evaluation is a bad default.
 - **Invert it on standards documents.** When you point the agent at a coding-standards document or ADR draft, it walks the artifact and asks whether the rules are testable, specific enough to enforce, and conflict-free with existing precedents. This is a useful second opinion before a standards document ships.
 
 ## Cost and Latency
@@ -167,7 +167,7 @@ URL: https://www.nngroup.com/articles/5-whys/
 - [Agents Index](./README.md) — All 20 agents, grouped by role.
 - [`project-manager`](./project-manager.md) — The coordinator this agent pairs with in planning skill review rounds.
 - [`/plan-a-feature`](../skills/plan-a-feature.md) and [`/plan-implementation`](../skills/plan-implementation.md) — Skills that always include this agent in their review rounds.
-- [agent-domain-focus.md](../../../../docs/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns even when the domain is "being a generalist."
-- [agent-model-selection.md](../../../../docs/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier on a synthesis-heavy inquiry agent.
-- [graceful-degradation.md](../../../../docs/agent-building-guidelines/graceful-degradation.md) — Why the agent handles missing git, missing standards documents, and missing ADRs inline rather than failing.
-- [multi-agent-economics.md](../../../../docs/agent-building-guidelines/multi-agent-economics.md) — Why this agent is a pre-specialist filter, not a specialist replacement.
+- [agent-domain-focus.md](../guidance/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns even when the domain is "being a generalist."
+- [agent-model-selection.md](../guidance/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier on a synthesis-heavy inquiry agent.
+- [graceful-degradation.md](../guidance/agent-building-guidelines/graceful-degradation.md) — Why the agent handles missing git, missing standards documents, and missing ADRs inline rather than failing.
+- [multi-agent-economics.md](../guidance/agent-building-guidelines/multi-agent-economics.md) — Why this agent is a pre-specialist filter, not a specialist replacement.

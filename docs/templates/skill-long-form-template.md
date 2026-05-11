@@ -1,6 +1,6 @@
 # /{skill-name}
 
-Operator documentation for the `/{skill-name}` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/{skill-name}/SKILL.md`](../../skills/{skill-name}/SKILL.md).
+Operator documentation for the `/{skill-name}` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/{skill-name}/SKILL.md`](../../plugin/skills/{skill-name}/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md) · [YAGNI](../yagni.md)
 
@@ -83,4 +83,4 @@ URL: {url}
 - [YAGNI](../yagni.md) — The evidence-based "You Aren't Gonna Need It" rule (when applicable). The two gates, the acceptable-evidence list, the named anti-patterns, and the deferral format.
 - [`{sibling-skill}`](./{sibling-skill}.md) — {Why and when they pair}
 - [`{agent-this-skill-dispatches}`](../agents/{agent}.md) — {Role in this skill}
-- [{build-guideline link}](../../../../docs/skill-building-guidance/{file}.md) — {Relevance}
+- [{build-guideline link}](../guidance/skill-building-guidance/{file}.md) — {Relevance}

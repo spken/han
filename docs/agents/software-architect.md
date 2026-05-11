@@ -1,6 +1,6 @@
 # software-architect
 
-Operator documentation for the `software-architect` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugins/han/agents/software-architect.md`](../../agents/software-architect.md).
+Operator documentation for the `software-architect` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugin/agents/software-architect.md`](../../plugin/agents/software-architect.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All agents](./README.md) · [All skills](../skills/README.md) · [YAGNI](../yagni.md)
 
@@ -30,12 +30,12 @@ Operator documentation for the `software-architect` agent in the han plugin. Thi
 **Do not dispatch for:**
 
 - **Cross-service / bounded-context topology.** Use [`system-architect`](./system-architect.md) — context-map relationships, integration patterns, data ownership across services, failure-domain containment.
-- **Discovering findings.** Use [`structural-analyst`](../../agents/structural-analyst.md), [`behavioral-analyst`](../../agents/behavioral-analyst.md), or [`concurrency-analyst`](../../agents/concurrency-analyst.md). This agent synthesizes; it does not discover.
-- **Risk prioritization.** Use [`risk-analyst`](../../agents/risk-analyst.md). This agent consumes risk assessments; it does not produce them.
+- **Discovering findings.** Use [`structural-analyst`](../../plugin/agents/structural-analyst.md), [`behavioral-analyst`](../../plugin/agents/behavioral-analyst.md), or [`concurrency-analyst`](../../plugin/agents/concurrency-analyst.md). This agent synthesizes; it does not discover.
+- **Risk prioritization.** Use [`risk-analyst`](../../plugin/agents/risk-analyst.md). This agent consumes risk assessments; it does not produce them.
 - **File-level code review.** Use [`/code-review`](../skills/code-review.md). This agent does not grade individual files for correctness, style, or test coverage.
 - **Production readiness.** Use [`devops-engineer`](./devops-engineer.md). Deployment, observability, rollout, and SLO concerns live there.
 - **Schema, index, or query design.** Use [`data-engineer`](./data-engineer.md).
-- **Exploit-path analysis.** Use [`adversarial-security-analyst`](../../agents/adversarial-security-analyst.md).
+- **Exploit-path analysis.** Use [`adversarial-security-analyst`](../../plugin/agents/adversarial-security-analyst.md).
 
 ## How to Invoke It
 
@@ -70,7 +70,7 @@ Every recommendation traces back to specific upstream finding IDs. If an upstrea
 - **Feed it complete upstream output.** Abbreviated summaries of analyst findings degrade synthesis. Pass the verbatim `S#`/`B#`/`C#`/`R#` blocks.
 - **Scope the focus area narrowly.** The agent verifies recommendations by reading code. A narrower focus area means sharper verification and more actionable pseudocode.
 - **Pair with [`system-architect`](./system-architect.md)** when findings span a service boundary or bounded-context seam. This agent's summary explicitly lists such deferrals; dispatching `system-architect` with the same upstream input gets you the recommendations at the other altitude.
-- **Do not re-run to "double-check."** Re-dispatching with the same input produces the same recommendations with higher cost. If you disagree with the output, challenge it with [`adversarial-validator`](../../agents/adversarial-validator.md) instead.
+- **Do not re-run to "double-check."** Re-dispatching with the same input produces the same recommendations with higher cost. If you disagree with the output, challenge it with [`adversarial-validator`](../../plugin/agents/adversarial-validator.md) instead.
 - **Use the `A#` IDs downstream.** The IDs are stable within a run and cite cleanly in ADRs, PR descriptions, and plan documents.
 
 ## Cost and Latency
@@ -141,9 +141,9 @@ URL: https://www.oreilly.com/library/view/design-patterns-elements/0201633612/
 - [Plugin landing page — han](../../README.md) — The front door.
 - [YAGNI](../yagni.md) — The evidence-based "You Aren't Gonna Need It" rule this agent applies. The two gates, the acceptable-evidence list, the named anti-patterns, and the deferral format.
 - [`system-architect`](./system-architect.md) — The sibling agent for concerns that cross a service or bounded-context seam.
-- [`structural-analyst`](../../agents/structural-analyst.md), [`behavioral-analyst`](../../agents/behavioral-analyst.md), [`concurrency-analyst`](../../agents/concurrency-analyst.md) — The three parallel analysts whose findings this agent synthesizes.
-- [`risk-analyst`](../../agents/risk-analyst.md) — The agent that prioritizes analyst findings; its assessments are part of this agent's input.
+- [`structural-analyst`](../../plugin/agents/structural-analyst.md), [`behavioral-analyst`](../../plugin/agents/behavioral-analyst.md), [`concurrency-analyst`](../../plugin/agents/concurrency-analyst.md) — The three parallel analysts whose findings this agent synthesizes.
+- [`risk-analyst`](../../plugin/agents/risk-analyst.md) — The agent that prioritizes analyst findings; its assessments are part of this agent's input.
 - [`/architectural-analysis`](../skills/architectural-analysis.md) — The skill that dispatches this agent as its final synthesis step.
 - [`/plan-implementation`](../skills/plan-implementation.md) — The skill that includes this agent in its roster for feature implementation planning.
-- [agent-domain-focus.md](../../../../docs/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns.
-- [agent-model-selection.md](../../../../docs/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier.
+- [agent-domain-focus.md](../guidance/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns.
+- [agent-model-selection.md](../guidance/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier.

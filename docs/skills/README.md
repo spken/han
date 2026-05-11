@@ -89,4 +89,4 @@ If you click through and a skill does not yet have a long-form doc, you have hit
 
 ## Adding a skill?
 
-See [Contributing](../contributing.md) for the full process and [the skill template](../templates/skill-long-form-template.md) for the long-form layout.
+See [Contributing](../../CONTRIBUTING.md) for the full process and [the skill template](../templates/skill-long-form-template.md) for the long-form layout.

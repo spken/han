@@ -1,6 +1,6 @@
 # /gap-analysis
 
-Operator documentation for the `/gap-analysis` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/gap-analysis/SKILL.md`](../../skills/gap-analysis/SKILL.md).
+Operator documentation for the `/gap-analysis` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/gap-analysis/SKILL.md`](../../plugin/skills/gap-analysis/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md)
 
@@ -17,7 +17,7 @@ Operator documentation for the `/gap-analysis` skill in the han plugin. This doc
 - **Stable `G-NNN` gap IDs.** Every gap gets a citable ID assigned in discovery order. Tickets, threads, and follow-up reports reference the IDs; Sections 3 and 4 cross-reference them without restating the plain-language explanation.
 - **The swarm is opt-in.** By default the report rests on `gap-analyzer` alone. The skill recommends a swarm composition sized to the analysis (small / medium / large) but never runs one without the user's explicit opt-in.
 - **Four sections, progressively disclosed.** Executive Summary → Indexed Gaps → optional Technical Details → optional Swarm Findings. Reading stops anywhere; what came before stands on its own. Optional sections are physically omitted when not requested, not collapsed.
-- **IA-designed template.** The report template was designed by `information-architect` against Rosenfeld & Morville's four IA systems, DITA topic typing, LATCH, Mark Baker's "Every Page is Page One", John Carroll's minimalism, JoAnn Hackos's audience-task mapping, and Dan Brown's 8 Principles of IA. The template lives at [`gap-analysis-report-template.md`](../../skills/gap-analysis/references/gap-analysis-report-template.md).
+- **IA-designed template.** The report template was designed by `information-architect` against Rosenfeld & Morville's four IA systems, DITA topic typing, LATCH, Mark Baker's "Every Page is Page One", John Carroll's minimalism, JoAnn Hackos's audience-task mapping, and Dan Brown's 8 Principles of IA. The template lives at [`gap-analysis-report-template.md`](../../plugin/skills/gap-analysis/references/gap-analysis-report-template.md).
 
 ## When to Use It
 
@@ -147,7 +147,7 @@ The skill draws on two distinct provenance lines: the gap-analysis vocabulary it
 
 The four-category taxonomy (Missing / Partial / Divergent / Implicit) and the evidence-pair requirement come from the `gap-analyzer` agent's protocol, which is itself grounded in software-engineering specification practice. The taxonomy is the agent's own vocabulary; the skill renders gap entries using that taxonomy verbatim because translating "Missing" or "Partial" into looser language would degrade the precision a stakeholder needs to decide what kind of remediation each gap requires.
 
-URL: see [`gap-analyzer` agent definition](../../agents/gap-analyzer.md)
+URL: see [`gap-analyzer` agent definition](../../plugin/agents/gap-analyzer.md)
 
 ### Rosenfeld & Morville — *Information Architecture* (4th edition)
 
@@ -196,13 +196,13 @@ URLs: https://hbr.org/2007/09/performing-a-project-premortem and https://en.wiki
 - [Plugin landing page — han](../../README.md) — The front door. Start here if you arrived from outside the docs tree.
 - [Skills Index](./README.md) — All 15 skills, grouped by purpose.
 - [Sizing](../sizing.md) — The cross-skill sizing model. Explains the small / medium / large bands, the default-to-small rule, and the `$size` override.
-- [`gap-analyzer`](../../agents/gap-analyzer.md) — The agent that performs the underlying gap analysis. The skill always dispatches it once and reads its full output.
-- [`adversarial-validator`](../../agents/adversarial-validator.md) — Required swarm role when the swarm runs. Attacks each gap with counter-evidence to produce per-gap `confirmed` / `contradicted` / `inconclusive` verdicts.
-- [`evidence-based-investigator`](../../agents/evidence-based-investigator.md) — Required swarm role when the swarm runs. Verifies each gap against the actual current state with file-level evidence.
+- [`gap-analyzer`](../../plugin/agents/gap-analyzer.md) — The agent that performs the underlying gap analysis. The skill always dispatches it once and reads its full output.
+- [`adversarial-validator`](../../plugin/agents/adversarial-validator.md) — Required swarm role when the swarm runs. Attacks each gap with counter-evidence to produce per-gap `confirmed` / `contradicted` / `inconclusive` verdicts.
+- [`evidence-based-investigator`](../../plugin/agents/evidence-based-investigator.md) — Required swarm role when the swarm runs. Verifies each gap against the actual current state with file-level evidence.
 - [`information-architect`](../agents/information-architect.md) — The agent that designed the report template. The template is a one-time IA design output; the agent is not dispatched at runtime.
 - [`/iterative-plan-review`](./iterative-plan-review.md) — Pair upstream when the desired-state artifact is itself a plan you do not yet trust. Hardening the desired state before comparing produces sharper gaps.
 - [`/plan-implementation`](./plan-implementation.md) — Pair downstream when the gap report will drive remediation work. The gap report's Section 2 IDs become work items; Section 3 (when present) feeds the implementation plan's Implementation Approach.
 - [`/investigate`](./investigate.md) — The sibling skill for runtime bug investigation. Use `/investigate` when the question is "why is this broken;" use `/gap-analysis` when the question is "how does this compare to what was specified."
 - [`/code-review`](./code-review.md) — The sibling skill for code-level quality review. Use `/code-review` when the question is about correctness, style, or security; use `/gap-analysis` when the question requires a comparison against a specification.
-- [Report template](../../skills/gap-analysis/references/gap-analysis-report-template.md) — The IA-designed template the skill renders. The template's front matter, "How to Read This Report" frame, and section structure are the canonical reference for the report's shape.
+- [Report template](../../plugin/skills/gap-analysis/references/gap-analysis-report-template.md) — The IA-designed template the skill renders. The template's front matter, "How to Read This Report" frame, and section structure are the canonical reference for the report's shape.
 - [coverage-rule.md](../templates/coverage-rule.md) — The criteria that decide which skills get a long-form doc. `/gap-analysis` qualifies on multiple modes (lightweight / swarm), multiple artifacts (report + source file), dispatches other agents, named pairings, user-reachable, and non-trivial provenance.

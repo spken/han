@@ -1,6 +1,6 @@
 # /project-documentation
 
-Operator documentation for the `/project-documentation` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/project-documentation/SKILL.md`](../../skills/project-documentation/SKILL.md).
+Operator documentation for the `/project-documentation` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/project-documentation/SKILL.md`](../../plugin/skills/project-documentation/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md)
 
@@ -56,7 +56,7 @@ Example prompts:
 
 A feature doc under the project's documentation root plus integration:
 
-- **`docs/{feature-name}.md`** — the feature doc, following the template at [`references/template.md`](../../skills/project-documentation/references/template.md). Structural sections: title + one-sentence description, Overview, Key Files, Behavior, Configuration, Error Handling, Testing, and Related Documentation. Template sections marked CONDITIONAL are omitted when they do not apply.
+- **`docs/{feature-name}.md`** — the feature doc, following the template at [`references/template.md`](../../plugin/skills/project-documentation/references/template.md). Structural sections: title + one-sentence description, Overview, Key Files, Behavior, Configuration, Error Handling, Testing, and Related Documentation. Template sections marked CONDITIONAL are omitted when they do not apply.
 - **Absolute file paths** from the repo root in every code example.
 - **Concrete, annotated code examples** (10–30 lines) drawn from real files.
 - **Language-specific code fences** matching the project's actual language.
@@ -119,7 +119,7 @@ URL: https://en.wikipedia.org/wiki/Darwin_Information_Typing_Architecture
 - [`/project-discovery`](./project-discovery.md) — Run first. The documentation skill reads the discovery reference to find the docs directory and stack language.
 - [`/architectural-decision-record`](./architectural-decision-record.md) — Use for decisions rather than system documentation.
 - [`/coding-standard`](./coding-standard.md) — Use for rules rather than descriptions.
-- [`codebase-explorer`](../agents/codebase-explorer.md) — Dispatched in parallel for code discovery.
-- [`content-auditor`](../agents/content-auditor.md) — Dispatched in update mode to ensure no facts are lost.
+- [`codebase-explorer`](../../plugin/agents/codebase-explorer.md) — Dispatched in parallel for code discovery.
+- [`content-auditor`](../../plugin/agents/content-auditor.md) — Dispatched in update mode to ensure no facts are lost.
 - [`information-architect`](../agents/information-architect.md) — Dispatched before verification to audit findability, scannability, and section ordering.
-- [`SKILL.md` for /project-documentation](../../skills/project-documentation/SKILL.md) — The internal process definition.
+- [`SKILL.md` for /project-documentation](../../plugin/skills/project-documentation/SKILL.md) — The internal process definition.

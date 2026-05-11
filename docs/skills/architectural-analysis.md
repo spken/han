@@ -1,6 +1,6 @@
 # /architectural-analysis
 
-Operator documentation for the `/architectural-analysis` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugins/han/skills/architectural-analysis/SKILL.md`](../../skills/architectural-analysis/SKILL.md).
+Operator documentation for the `/architectural-analysis` skill in the han plugin. This document helps humans decide *when* and *how* to use the skill. For what the skill does internally, read the skill definition at [`plugin/skills/architectural-analysis/SKILL.md`](../../plugin/skills/architectural-analysis/SKILL.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All skills](./README.md) · [All agents](../agents/README.md)
 
@@ -131,11 +131,11 @@ URL: https://www.domainlanguage.com/ddd/
 
 - [Plugin landing page — han](../../README.md) — The front door. Start here if you arrived from outside the docs tree.
 - [Skills Index](./README.md) — All 15 skills, grouped by purpose.
-- [`structural-analyst`](../../agents/structural-analyst.md), [`behavioral-analyst`](../../agents/behavioral-analyst.md), [`concurrency-analyst`](../../agents/concurrency-analyst.md) — The three parallel analysts.
-- [`risk-analyst`](../../agents/risk-analyst.md) — The agent that scores the analysts' findings by likelihood, severity, blast radius, and reversibility.
+- [`structural-analyst`](../../plugin/agents/structural-analyst.md), [`behavioral-analyst`](../../plugin/agents/behavioral-analyst.md), [`concurrency-analyst`](../../plugin/agents/concurrency-analyst.md) — The three parallel analysts.
+- [`risk-analyst`](../../plugin/agents/risk-analyst.md) — The agent that scores the analysts' findings by likelihood, severity, blast radius, and reversibility.
 - [`software-architect`](../agents/software-architect.md) — The adversarial synthesis agent that produces intra-codebase recommendations and pseudocode sketches (dispatched by this skill).
 - [`system-architect`](../agents/system-architect.md) — The adversarial synthesis agent that produces cross-service / bounded-context recommendations (dispatch separately when the focus area crosses a service or context seam).
 - [`/architectural-decision-record`](./architectural-decision-record.md) — Record the architectural decisions the analysis motivates.
 - [`/investigate`](./investigate.md) — Run when a finding reveals a concrete runtime bug.
 - [`/iterative-plan-review`](./iterative-plan-review.md) — Stress-test the refactoring plan that implements the recommendations.
-- [`SKILL.md` for /architectural-analysis](../../skills/architectural-analysis/SKILL.md) — The internal process definition.
+- [`SKILL.md` for /architectural-analysis](../../plugin/skills/architectural-analysis/SKILL.md) — The internal process definition.

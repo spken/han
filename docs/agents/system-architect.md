@@ -1,6 +1,6 @@
 # system-architect
 
-Operator documentation for the `system-architect` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugins/han/agents/system-architect.md`](../../agents/system-architect.md).
+Operator documentation for the `system-architect` agent in the han plugin. This document helps humans decide *when* and *how* to dispatch the agent. For what the agent does internally, read the agent definition at [`plugin/agents/system-architect.md`](../../plugin/agents/system-architect.md).
 
 > See also: [Plugin landing page — han](../../README.md) · [All agents](./README.md) · [All skills](../skills/README.md) · [YAGNI](../yagni.md)
 
@@ -35,9 +35,9 @@ Operator documentation for the `system-architect` agent in the han plugin. This 
 - **Intra-codebase refactoring.** Use [`software-architect`](./software-architect.md) — module splits, class decomposition, interface-segregation, extension points inside one codebase.
 - **Production readiness.** Use [`devops-engineer`](./devops-engineer.md) — deploy strategy, observability, SLOs, progressive delivery, feature flags. The system-architect names failure-domain mechanisms in its recommendations but does not own operational rollout.
 - **Schema / index / query design.** Use [`data-engineer`](./data-engineer.md). The system-architect names data ownership; the data-engineer owns the underlying storage model.
-- **Exploit-path analysis.** Use [`adversarial-security-analyst`](../../agents/adversarial-security-analyst.md). The system-architect names trust-boundary placement as a topology choice, not a vulnerability claim.
-- **Discovering findings.** Use [`structural-analyst`](../../agents/structural-analyst.md), [`behavioral-analyst`](../../agents/behavioral-analyst.md), or [`concurrency-analyst`](../../agents/concurrency-analyst.md). This agent synthesizes; it does not discover.
-- **Risk prioritization.** Use [`risk-analyst`](../../agents/risk-analyst.md). This agent consumes risk assessments; it does not produce them.
+- **Exploit-path analysis.** Use [`adversarial-security-analyst`](../../plugin/agents/adversarial-security-analyst.md). The system-architect names trust-boundary placement as a topology choice, not a vulnerability claim.
+- **Discovering findings.** Use [`structural-analyst`](../../plugin/agents/structural-analyst.md), [`behavioral-analyst`](../../plugin/agents/behavioral-analyst.md), or [`concurrency-analyst`](../../plugin/agents/concurrency-analyst.md). This agent synthesizes; it does not discover.
+- **Risk prioritization.** Use [`risk-analyst`](../../plugin/agents/risk-analyst.md). This agent consumes risk assessments; it does not produce them.
 
 ## How to Invoke It
 
@@ -78,7 +78,7 @@ Example prompts:
 - **Pair with [`software-architect`](./software-architect.md)** when a change has both altitudes. The boundary-crossing decisions land in this agent's report; the intra-codebase changes inside each service land in the software-architect's.
 - **Pair with [`devops-engineer`](./devops-engineer.md)** when the recommendation changes retry budgets, timeouts, or circuit-breaker placement. The devops-engineer owns the runtime validation of those choices.
 - **Pair with [`data-engineer`](./data-engineer.md)** when a data-ownership recommendation implies a schema-ownership change. The data-engineer owns the migration strategy.
-- **Pair with [`adversarial-validator`](../../agents/adversarial-validator.md)** if you want the recommendations challenged. The agent does not evaluate its own output.
+- **Pair with [`adversarial-validator`](../../plugin/agents/adversarial-validator.md)** if you want the recommendations challenged. The agent does not evaluate its own output.
 
 ## Cost and Latency
 
@@ -191,8 +191,8 @@ URL: https://www.melconway.com/Home/Committees_Paper.html
 - [`software-architect`](./software-architect.md) — The sibling agent for intra-codebase synthesis.
 - [`devops-engineer`](./devops-engineer.md) — Production readiness; pair on failure-domain and retry-budget recommendations.
 - [`data-engineer`](./data-engineer.md) — Schema and access-pattern design; pair on data-ownership recommendations.
-- [`structural-analyst`](../../agents/structural-analyst.md), [`behavioral-analyst`](../../agents/behavioral-analyst.md), [`concurrency-analyst`](../../agents/concurrency-analyst.md), [`risk-analyst`](../../agents/risk-analyst.md) — The upstream analysts whose findings this agent synthesizes at the boundary level.
+- [`structural-analyst`](../../plugin/agents/structural-analyst.md), [`behavioral-analyst`](../../plugin/agents/behavioral-analyst.md), [`concurrency-analyst`](../../plugin/agents/concurrency-analyst.md), [`risk-analyst`](../../plugin/agents/risk-analyst.md) — The upstream analysts whose findings this agent synthesizes at the boundary level.
 - [`/plan-implementation`](../skills/plan-implementation.md) — The skill that includes this agent in its roster when a feature crosses a service boundary.
 - [`/architectural-analysis`](../skills/architectural-analysis.md) — Chains to `software-architect`, which defers cross-service concerns. When those deferrals appear, dispatch this agent.
-- [agent-domain-focus.md](../../../../docs/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns.
-- [agent-model-selection.md](../../../../docs/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier.
+- [agent-domain-focus.md](../guidance/agent-building-guidelines/agent-domain-focus.md) — Why the agent uses precise domain vocabulary and named anti-patterns.
+- [agent-model-selection.md](../guidance/agent-building-guidelines/agent-model-selection.md) — Rationale for the `opus` model tier.

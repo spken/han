@@ -10,7 +10,7 @@ YAGNI — *You Aren't Gonna Need It* — is the second foundational mechanic of 
 - **Two gates.** Gate 1 asks *is this needed now?* (the evidence test). Gate 2 asks *is there a strictly simpler version that satisfies the same evidence?* (the simpler-version test).
 - **Default is defer.** When no evidence applies, items move to a `## Deferred (YAGNI)` section in the artifact with a named *reopen-when* trigger. They are never silently dropped.
 - **The user always wins.** Skills and agents make the cost of inclusion visible; the user can direct an item to be kept against the rule. The point is conscious choice, not bureaucratic exclusion.
-- **The canonical rule lives in [`plugins/han/references/yagni-rule.md`](../references/yagni-rule.md).** Every YAGNI-aware skill and agent loads that file at runtime — this page is the operator-facing summary.
+- **The canonical rule lives in [`plugin/references/yagni-rule.md`](../plugin/references/yagni-rule.md).** Every YAGNI-aware skill and agent loads that file at runtime — this page is the operator-facing summary.
 
 ## Why YAGNI matters
 
@@ -51,7 +51,7 @@ If a simpler version satisfies the same evidence, the simpler version replaces t
 
 ## Named anti-patterns (auto-flag as YAGNI candidates)
 
-The full list lives in [`yagni-rule.md`](../references/yagni-rule.md). Highlights:
+The full list lives in [`yagni-rule.md`](../plugin/references/yagni-rule.md). Highlights:
 
 - "We might need…" / "for future flexibility" / "in case we want to…"
 - "When we scale" / "at scale" / "for performance" without measured pressure.
@@ -90,8 +90,8 @@ YAGNI applies in two postures: **producing** (when a skill drafts an artifact) a
 | [`junior-developer`](./agents/junior-developer.md) | The YAGNI Evidence Sweep protocol — flags hidden assumptions and uncited additions during stress-testing. |
 | [`software-architect`](./agents/software-architect.md) | Architectural recommendations cite the change-history or coupling evidence that justifies the recommendation. Speculative abstractions are deferred. |
 | [`system-architect`](./agents/system-architect.md) | Cross-service topology changes cite the seam-crossing evidence (data ownership conflict, failure-domain leak, integration shape) that justifies them. |
-| [`test-engineer`](./agents/test-engineer.md) | The Speculative Test rule — tests for code paths that don't exist, hypothetical adversaries, or unreachable branches are flagged. |
-| [`edge-case-explorer`](./agents/edge-case-explorer.md) | The Speculative Edge Case rule — edge cases for code paths that don't exist or for inputs that internal callers fully control are flagged. |
+| [`test-engineer`](../plugin/agents/test-engineer.md) | The Speculative Test rule — tests for code paths that don't exist, hypothetical adversaries, or unreachable branches are flagged. |
+| [`edge-case-explorer`](../plugin/agents/edge-case-explorer.md) | The Speculative Edge Case rule — edge cases for code paths that don't exist or for inputs that internal callers fully control are flagged. |
 | [`data-engineer`](./agents/data-engineer.md) | The Speculative Data Machinery rule — indexes for queries that don't run, audit columns nobody reads, denormalization for read patterns that don't exist. |
 | [`devops-engineer`](./agents/devops-engineer.md) | The Premature Operational Machinery rule — runbooks for alerts that have never fired, SLOs for traffic that doesn't yet exist, multi-region infrastructure for unproven single-region workloads. |
 
@@ -126,7 +126,7 @@ When no items are deferred, the section is omitted entirely (don't write empty s
 
 ## Related reading
 
-- [`plugins/han/references/yagni-rule.md`](../references/yagni-rule.md) — The canonical rule that every YAGNI-aware skill and agent loads at runtime.
+- [`plugin/references/yagni-rule.md`](../plugin/references/yagni-rule.md) — The canonical rule that every YAGNI-aware skill and agent loads at runtime.
 - [Concepts](./concepts.md) — The skill / agent split. YAGNI is a property of skills that produce artifacts and agents that review them.
 - [Sizing](./sizing.md) — The other foundational mechanic. Sizing decides *how much review* an artifact gets; YAGNI decides *what survives* the review.
 - The skill long-form docs and agent long-form docs cited in the table above each name where they apply YAGNI in their own protocol.

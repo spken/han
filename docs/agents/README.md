@@ -19,8 +19,8 @@ Agents that coordinate the work of other agents during planning and design.
 
 Specialist reviewers whose default posture is adversarial toward the artifact under review, never toward the author.
 
-- **[`adversarial-security-analyst`](../../agents/adversarial-security-analyst.md)** — Assumes all code is insecure; produces exploit-path evidence, not theoretical risks. Dispatched by `/code-review`.
-- **[`adversarial-validator`](../../agents/adversarial-validator.md)** — Assumes investigation evidence is wrong and the proposed fix will fail. Searches for counter-evidence and unhandled edge cases. Dispatched by `/investigate` and by planning skills.
+- **[`adversarial-security-analyst`](../../plugin/agents/adversarial-security-analyst.md)** — Assumes all code is insecure; produces exploit-path evidence, not theoretical risks. Dispatched by `/code-review`.
+- **[`adversarial-validator`](../../plugin/agents/adversarial-validator.md)** — Assumes investigation evidence is wrong and the proposed fix will fail. Searches for counter-evidence and unhandled edge cases. Dispatched by `/investigate` and by planning skills.
 - **[`devops-engineer`](./devops-engineer.md)** — Assumes the code will break in production. Audits against DORA, Twelve-Factor, Four Golden Signals, SLO discipline, and named production failure modes.
 - **[`data-engineer`](./data-engineer.md)** — Assumes the data design is over-normalized, under-normalized, and indexed for the wrong workload. Audits schemas, migrations, queries, and pipelines.
 - **[`information-architect`](./information-architect.md)** — Assumes the documentation is harder to find, orient in, and comprehend than it needs to be. Audits documentation sets against established IA frameworks. Dispatched by [`/plan-a-phased-build`](../skills/plan-a-phased-build.md) at runtime against every rendered build-phase outline; can be dispatched directly when any documentation surface needs an IA audit.
@@ -30,18 +30,18 @@ Specialist reviewers whose default posture is adversarial toward the artifact un
 
 Agents that gather concrete evidence about a codebase.
 
-- **[`evidence-based-investigator`](../../agents/evidence-based-investigator.md)** — Gathers file paths, line numbers, code snippets, error messages, git history, and test coverage. Dispatched by `/investigate`.
-- **[`codebase-explorer`](../../agents/codebase-explorer.md)** — Discovers implementation details for a specific feature — entry points, core logic, data models, configuration, tests.
-- **[`project-scanner`](../../agents/project-scanner.md)** — Scans repository attributes (languages, frameworks, tooling, configuration). Optimized for config and structure, not deep code tracing. Dispatched by `/project-discovery`.
+- **[`evidence-based-investigator`](../../plugin/agents/evidence-based-investigator.md)** — Gathers file paths, line numbers, code snippets, error messages, git history, and test coverage. Dispatched by `/investigate`.
+- **[`codebase-explorer`](../../plugin/agents/codebase-explorer.md)** — Discovers implementation details for a specific feature — entry points, core logic, data models, configuration, tests.
+- **[`project-scanner`](../../plugin/agents/project-scanner.md)** — Scans repository attributes (languages, frameworks, tooling, configuration). Optimized for config and structure, not deep code tracing. Dispatched by `/project-discovery`.
 
 ## Architecture & risk
 
 Agents that analyze the static and dynamic shape of a module or subsystem.
 
-- **[`structural-analyst`](../../agents/structural-analyst.md)** — Module boundaries, coupling, dependency direction, abstractions, duplication.
-- **[`behavioral-analyst`](../../agents/behavioral-analyst.md)** — Data flow, error propagation, state management, integration boundaries.
-- **[`concurrency-analyst`](../../agents/concurrency-analyst.md)** — Race conditions, shared resource contention, deadlock potential, async error handling.
-- **[`risk-analyst`](../../agents/risk-analyst.md)** — Assesses risk of inaction for architectural findings across likelihood, severity, blast radius, and reversibility. Consumes findings from the three analysts above.
+- **[`structural-analyst`](../../plugin/agents/structural-analyst.md)** — Module boundaries, coupling, dependency direction, abstractions, duplication.
+- **[`behavioral-analyst`](../../plugin/agents/behavioral-analyst.md)** — Data flow, error propagation, state management, integration boundaries.
+- **[`concurrency-analyst`](../../plugin/agents/concurrency-analyst.md)** — Race conditions, shared resource contention, deadlock potential, async error handling.
+- **[`risk-analyst`](../../plugin/agents/risk-analyst.md)** — Assesses risk of inaction for architectural findings across likelihood, severity, blast radius, and reversibility. Consumes findings from the three analysts above.
 - **[`software-architect`](./software-architect.md)** — Adversarial toward the intra-codebase structure; assumes it is too coupled, too scattered, missing an abstraction, or over-abstracted until evidence says otherwise. Synthesizes structural, behavioral, concurrency, and risk findings into recommended changes aligned with SOLID, high cohesion, and loose coupling. Produces pseudocode sketches for proposed modules, interfaces, and boundaries inside a single codebase or bounded context.
 - **[`system-architect`](./system-architect.md)** — Adversarial toward the cross-service topology; assumes bounded contexts leak, integrations are sync-by-default, data ownership is contested, and failure domains are uncontained until evidence says otherwise. Synthesizes boundary-crossing findings (including `devops-engineer` and `data-engineer` when available) into context-map relationships, integration patterns, data ownership, and failure-domain containment. Operates where the unit of design is a service or bounded context, not a class or module.
 
@@ -51,8 +51,8 @@ Agents that analyze the static and dynamic shape of a module or subsystem.
 
 Agents that plan tests; neither writes test code.
 
-- **[`test-engineer`](../../agents/test-engineer.md)** — Plans tests focused on observable behavior (inputs, outputs, collaborator interactions). Recommends test doubles for isolation; produces a prioritized test plan.
-- **[`edge-case-explorer`](../../agents/edge-case-explorer.md)** — Systematically discovers and catalogs edge cases — boundary values, type coercion traps, state-dependent failures. Defaults to focused mode; request "exhaustive exploration" for comprehensive analysis.
+- **[`test-engineer`](../../plugin/agents/test-engineer.md)** — Plans tests focused on observable behavior (inputs, outputs, collaborator interactions). Recommends test doubles for isolation; produces a prioritized test plan.
+- **[`edge-case-explorer`](../../plugin/agents/edge-case-explorer.md)** — Systematically discovers and catalogs edge cases — boundary values, type coercion traps, state-dependent failures. Defaults to focused mode; request "exhaustive exploration" for comprehensive analysis.
 
 Both are dispatched by `/test-planning` and `/code-review`.
 
@@ -60,8 +60,8 @@ Both are dispatched by `/test-planning` and `/code-review`.
 
 Agents that compare artifacts and preserve meaning across documentation moves.
 
-- **[`gap-analyzer`](../../agents/gap-analyzer.md)** — Finds what is missing, incomplete, conflicting, or assumed when comparing a current state against a desired state (code vs. spec, implementation vs. PRD). Dispatched by [`/gap-analysis`](../skills/gap-analysis.md), which renders the agent's structured output as a plain-language, stakeholder-readable report.
-- **[`content-auditor`](../../agents/content-auditor.md)** — Validates that documentation updates preserved the important facts from the original source. Flags removals that were not justified by the codebase.
+- **[`gap-analyzer`](../../plugin/agents/gap-analyzer.md)** — Finds what is missing, incomplete, conflicting, or assumed when comparing a current state against a desired state (code vs. spec, implementation vs. PRD). Dispatched by [`/gap-analysis`](../skills/gap-analysis.md), which renders the agent's structured output as a plain-language, stakeholder-readable report.
+- **[`content-auditor`](../../plugin/agents/content-auditor.md)** — Validates that documentation updates preserved the important facts from the original source. Flags removals that were not justified by the codebase.
 
 ---
 
@@ -88,4 +88,4 @@ If you think a specific agent crosses the coverage threshold and deserves a long
 
 ## Adding an agent?
 
-See [Contributing](../contributing.md) and [the agent template](../templates/agent-long-form-template.md).
+See [Contributing](../../CONTRIBUTING.md) and [the agent template](../templates/agent-long-form-template.md).

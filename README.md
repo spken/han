@@ -90,11 +90,11 @@ Add the Test Double skills marketplace to Claude Code, then install the plugin:
 - [Sizing](./docs/sizing.md). The small / medium / large model that decides how many agents the swarming skills dispatch.
 - [YAGNI](./docs/yagni.md). The evidence-based "You Aren't Gonna Need It" rule every planning, review, and architecture skill applies.
 - [Contributing](./CONTRIBUTING.md). Adding or editing skills, agents, and documentation.
-- [Release Notes](./release-notes.md). What's new in each version of the plugin.
+- [Changelog](./CHANGELOG.md). What's new in each version of the plugin.
 
 ## Maintainance and Support
 
-- **Maintenance horizon:** Indefinitely maintained, best-effort — no SLA
+- **Maintenance horizon:** Indefinitely maintained, best-effort. No SLA.
 - **Project type:** Personal project, with some Test Double support
 - **How to report issues:** GitHub Issues, with expected best effort for response within 2 weeks.
 

@@ -2,7 +2,7 @@
 
 Han is a Claude Code plugin: a suite of skills and agents for solo (or small-team) product engineers. It packages evidence-based planning, deep code review, investigation, and documentation workflows into deterministic slash commands that dispatch specialist sub-agents to do the judgment-heavy work.
 
-Current version: **2.1.0** (see [release-notes.md](./release-notes.md)).
+Current version: **2.1.0** (see [CHANGELOG.md](./CHANGELOG.md)).
 
 ## Repository layout
 
@@ -11,7 +11,7 @@ Current version: **2.1.0** (see [release-notes.md](./release-notes.md)).
 ├── README.md           # End-user landing page
 ├── CONTRIBUTING.md     # Contributor guide
 ├── CLAUDE.md           # This file
-├── release-notes.md    # Version history
+├── CHANGELOG.md    # Version history
 ├── .claude-plugin/
 │   └── marketplace.json   # Test Double marketplace manifest
 ├── plugin/             # The actual plugin shipped to Claude Code
@@ -41,7 +41,7 @@ The plugin is shipped from `plugin/`; documentation lives in `docs/`. Long-form 
 
 - **[README.md](./README.md).** End-user landing page. Use to understand what the plugin is and where to start. Lists install instructions and pointers to every other doc.
 - **[CONTRIBUTING.md](./CONTRIBUTING.md).** Contributor guide for adding or editing skills, agents, and documentation. Read before changing any file under `plugin/` or `docs/`.
-- **[release-notes.md](./release-notes.md).** Version history. Check when a behavior or skill name in user-supplied context doesn't match what's on disk. May be a pre-2.0 rename or a removed feature.
+- **[CHANGELOG.md](./CHANGELOG.md).** Version history. Check when a behavior or skill name in user-supplied context doesn't match what's on disk. May be a pre-2.0 rename or a removed feature.
 
 ### Writing voice
 

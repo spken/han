@@ -90,6 +90,6 @@ For each junior-developer finding (JD1, JD2, ...) from the junior-developer, ass
 
 - **CRIT**: Only when the finding names a direct violation of a documented coding standard, ADR, or CLAUDE.md rule. Clarity-for-clarity's-sake is never CRIT.
 - **WARN**: Violation of a convention that the project clearly follows elsewhere, or an assumption baked into the change that a teammate would not spot from context.
-- **SUGG**: Unclear naming, confusing control flow, or missing-but-optional comment explaining a non-obvious why. Most findings land here.
+- **SUGG**: Unclear naming, confusing control flow, or missing-but-optional comment explaining a non-obvious why.
 
 Do not duplicate a junior-developer finding when another agent has already raised the same issue — prefer the specialist's classification and reference it from the JD finding instead.

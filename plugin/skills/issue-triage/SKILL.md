@@ -10,6 +10,7 @@
 ## Triage Approach
 
 - Work only from what the reporter wrote. Do not infer facts that are not stated.
+- For Expected Behavior and Suspected Areas, do not fill gaps with assumed intent or codebase guesses.
 - Classify the issue type before doing anything else. The type drives what counts as missing information.
 - Severity is an estimate based on what is known. Mark it Unknown when impact is not inferable from the report.
 - The recommended next step is the single most appropriate han skill to run after triage completes.
@@ -29,7 +30,7 @@ Determine the issue type from the report text:
 - **Feature Request** — something new is being asked for
 - **Performance** — the system is too slow, uses too much memory, or degrades under load
 - **Security** — a vulnerability, exposure, or access control concern
-- **Regression** — the reporter explicitly says it used to work and no longer does
+- **Regression** — the reporter explicitly says it used to work and no longer does; quote or paraphrase that statement
 - **Question** — the reporter is asking how something works, not reporting a problem
 - **Other** — none of the above apply
 
@@ -73,7 +74,7 @@ If nothing is missing, write: `None — report has enough to proceed.`
 
 ## Step 6: Identify Suspected Areas
 
-If the report or project context points to specific system areas, list them. Examples: upload pipeline, authentication middleware, database migrations, frontend state management. If nothing in the report or CLAUDE.md points to a specific area, omit this section.
+If the report or project context points to specific system areas, list them. Examples: upload pipeline, authentication middleware, database migrations, frontend state management. Do not infer areas that are not mentioned. If nothing in the report or CLAUDE.md points to a specific area, omit this section.
 
 ## Step 7: Write the Triage Report
 
@@ -116,7 +117,7 @@ Use this structure:
 
 # Recommended Next Step
 
-{If any critical reproduction or scope details are missing, write "Clarify with reporter before proceeding". Otherwise choose the single most appropriate skill: /investigate, /plan-a-feature, or /plan-implementation.}
+{If any of these are missing, write "Clarify with reporter before proceeding": reproduction steps, environment details (OS, browser, version), or the user-impact scope. Otherwise choose the single most appropriate skill: /investigate, /plan-a-feature, or /plan-implementation.}
 ```
 
 Present the triage report to the user.

@@ -67,6 +67,48 @@ A triage report file with these sections:
 - **Reproducibility.** An estimate: Always, Intermittent, Rare, or Unknown.
 - **Recommended Next Step.** The single most appropriate han skill to run next, or "Clarify with reporter before proceeding" when critical reproduction or scope details are missing.
 
+## Output contract
+
+This is the exact output contract the skill follows. It is intentionally strict to prevent inference from vague reports.
+
+```md
+# Summary
+
+{one sentence}
+
+# Issue Type
+
+{Bug | Feature Request | Performance | Security | Regression | Question | Other}
+
+# Reported Behavior
+
+{what the reporter said happened}
+
+# Expected Behavior
+
+{what the reporter said should happen, or Unknown}
+
+# Missing Information
+
+{bulleted list, or "None. Report has enough to proceed."}
+
+# Suspected Areas
+
+{bulleted list. Omit if nothing is explicitly mentioned}
+
+# Severity
+
+{Critical | High | Medium | Low | Unknown}
+
+# Reproducibility
+
+{Always | Intermittent | Rare | Unknown}
+
+# Recommended Next Step
+
+{"Clarify with reporter before proceeding" or one of: /investigate, /plan-a-feature, /plan-implementation}
+```
+
 
 ## How to get the most out of it
 
@@ -74,6 +116,52 @@ A triage report file with these sections:
 - **Use the output as a handoff document.** The triage report is the input for the next skill. Pass it to `/investigate` or `/plan-a-feature` rather than re-summarizing the issue from scratch.
 - **Run it before `/investigate` on ambiguous issues.** Investigation works best with a sharp problem statement. Triage produces one. A few seconds of triage avoids a wasted investigation run on a problem that was not yet well-defined.
 - **Follow the Recommended Next Step.** When the report still has critical gaps, the recommendation will say so explicitly. That is the signal to go back to the reporter before running the next skill.
+
+## Minimal example
+
+Input:
+
+```
+"Uploads fail sometimes. Not sure why."
+```
+
+Output:
+
+```md
+# Summary
+
+Uploads fail intermittently.
+
+# Issue Type
+
+Bug
+
+# Reported Behavior
+
+Uploads fail sometimes.
+
+# Expected Behavior
+
+Unknown
+
+# Missing Information
+
+- Reproduction steps
+- Environment details (OS, browser, version)
+- User-impact scope
+
+# Severity
+
+Unknown
+
+# Reproducibility
+
+Intermittent
+
+# Recommended Next Step
+
+"Clarify with reporter before proceeding"
+```
 
 
 ## Cost and latency

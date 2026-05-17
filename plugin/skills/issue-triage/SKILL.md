@@ -53,7 +53,7 @@ List what a developer would need to reproduce or investigate this issue that is 
 
 List only what is genuinely absent. Do not list information already present in the report.
 
-If nothing is missing, write: `None — report has enough to proceed.`
+If nothing is missing, write: `None - report has enough to proceed.`
 
 ## Step 5: Assess Severity and Reproducibility
 
@@ -101,7 +101,7 @@ Use this structure:
 
 # Missing Information
 
-{bulleted list, or "None — report has enough to proceed."}
+{bulleted list, or "None - report has enough to proceed."}
 
 # Suspected Areas
 
